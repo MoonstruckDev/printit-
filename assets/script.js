@@ -9,7 +9,6 @@ const slides = [
 let arrowLeft = document.querySelector("#banner .arrow_left")
 let arrowRight = document.querySelector("#banner .arrow_right")
 
-
 let currentIndex = 0;
 // Test of selecting right elements
 // console.log(arrowLeft)
