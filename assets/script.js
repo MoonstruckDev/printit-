@@ -6,8 +6,8 @@ const slides = [
   ];
 
 // Var Decs
-let arrowLeft = document.querySelector("#banner .arrow_left")
-let arrowRight = document.querySelector("#banner .arrow_right")
+const arrowLeft = document.querySelector("#banner .arrow_left")
+const arrowRight = document.querySelector("#banner .arrow_right")
 
 let currentIndex = 0;
 // Test of selecting right elements
@@ -21,14 +21,14 @@ function navigateSlides(direction) {
 }
 
 function updateBanner() {
-	let bannerImage = document.querySelector("#banner .banner-img")
-	let tagLineElement = document.querySelector("#banner p")
+	const bannerImage = document.querySelector("#banner .banner-img")
+	const tagLineElement = document.querySelector("#banner p")
 	bannerImage.src = `./assets/images/slideshow/${slides[currentIndex].image}`
 	tagLineElement.innerHTML = slides[currentIndex].tagLine
 	focusDots()
 }
 function focusDots() {
-	let dots = document.querySelectorAll('.dots .dot');
+	const dots = document.querySelectorAll('.dots .dot');
 	dots.forEach(dot => dot.classList.remove('dot_selected'))
 	dots[currentIndex].classList.add('dot_selected')
 }
