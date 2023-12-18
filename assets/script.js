@@ -1,3 +1,5 @@
+'use strict';
+
 const slides = [
 	{ image: "slide1.jpg", tagLine: "Impressions tous formats <span>en boutique et en ligne</span>" },
 	{ image: "slide2.jpg", tagLine: "Tirages haute définition grand format <span>pour vos bureaux et events</span>" },
@@ -27,6 +29,28 @@ function updateBanner() {
 	tagLineElement.innerHTML = slides[currentIndex].tagLine
 	focusDots()
 }
+
+// Function to create dots
+function createDots() {
+	const dotsContainer = document.querySelector('.dots');
+	
+	// Clear existing dots
+	dotsContainer.innerHTML = '';
+	
+	// Create a dot for each slide
+	slides.forEach((slide, index) => {
+	  const dot = document.createElement('div');
+	  dot.classList.add('dot');
+	  dot.addEventListener('click', () => navigateToSlide(index));
+	  dotsContainer.appendChild(dot);
+	});
+  
+	// Focus on the first dot
+	focusDots();
+  }
+  
+  createDots();
+  
 function focusDots() {
 	const dots = document.querySelectorAll('.dots .dot');
 	dots.forEach(dot => dot.classList.remove('dot_selected'))
